@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List of People</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>Birthday</th>
+				<th>Address</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="person : ${person}">
+				<td th:text="${person.name}"></td>
+				<td th:text="${person.lastname}"></td>
+				<td th:text="${person.birthday}"></td>
+				<td th:text="${person.address}"></td>
+				<td th:text="${person.salary}"></td>
+				<td><a th:href="@{'/person/__${person.id}__/delete'}">Delete</a><a th:href="@{'/person/__${person.id}__/update'}">Update</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
